@@ -2,6 +2,7 @@
 #include <string>
 #include <cstdlib>
 #include <node.h>
+//#include <android_native_app_glue.h>
 
 extern "C" JNIEXPORT jstring JNICALL
 Java_mobile_agentplatform_MainActivity_stringFromJNI(JNIEnv *env, jobject thiz) {
@@ -77,3 +78,17 @@ Java_mobile_agentplatform_MainActivity_startNodeWithArguments(
 
     return jint(node_result);
 }
+
+//void android_main(struct android_app* state) {
+//    int argument_count = 3;
+//    char* argv[argument_count];
+//    argv[0] = "node";
+//    argv[1] = "-e";
+//    argv[2] = "var http = require('http');"
+//              "var versions_server = http.createServer( (request, response) => {"
+//              "response.end('Versions: ' + JSON.stringify(process.versions));"
+//              "});"
+//              "versions_server.listen(3000);";
+//
+//    int node_result = node::Start(argument_count, argv);
+//}

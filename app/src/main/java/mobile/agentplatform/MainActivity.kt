@@ -1,5 +1,7 @@
 package mobile.agentplatform
 
+import android.app.NativeActivity
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -77,6 +79,16 @@ class MainActivity : AppCompatActivity() {
         } else {
             printLog("LOG: (killThread) " + projectThread?.name + " not alive")
         }
+    }
+
+    fun loadNative(view: View) {
+        val intent = Intent(applicationContext, NativeActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun loadNode(view: View) {
+//        val intent = Intent(applicationContext, NodeNativeActivity::class.java)
+//        startActivity(intent)
     }
 
     fun printLog(text: String?) {
